@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - CarExit
+  - DriveThruWindow
+  - Car
+  - Customer
+  - CustomerExit
+  - ATMWindow
   layers:
   - Default
   - TransparentFX
