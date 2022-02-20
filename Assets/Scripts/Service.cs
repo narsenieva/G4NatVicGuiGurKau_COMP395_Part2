@@ -8,7 +8,7 @@ public class Service : MonoBehaviour
     public GameObject customerInService;
     public Transform customerExitPlace;
 
-    public float serviceRateAsCustomersPerHour = 25; // customer/hour
+    public float serviceRateAsCustomersPerHour = 20; // customer/hour
     public float interServiceTimeInHours; // = 1.0 / ServiceRateAsCarsPerHour;
     private float interServiceTimeInMinutes;
     private float interServiceTimeInSeconds;

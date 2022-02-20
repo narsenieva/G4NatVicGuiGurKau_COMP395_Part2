@@ -9,7 +9,7 @@ public class Arrival : MonoBehaviour
     public GameObject customerPrefab;
     public Transform customerSpawnPlace;
 
-    public float arrivalRateAsCustomersPerHour = 20; // customer/hour
+    public float arrivalRateAsCustomersPerHour = 12; // customer/hour
     public float interArrivalTimeInHours; // = 1.0 / arrivalRateAsCarsPerHour;
     private float interArrivalTimeInMinutes;
     private float interArrivalTimeInSeconds;
