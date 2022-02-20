@@ -9,7 +9,7 @@ public class Arrival : MonoBehaviour
     public GameObject customerPrefab;
     public Transform customerSpawnPlace;
 
-    public float arrivalRateAsCustomersPerHour = 20; // customer/hour
+    public float arrivalRateAsCustomersPerHour = 200; // customer/hour
     public float interArrivalTimeInHours; // = 1.0 / arrivalRateAsCarsPerHour;
     private float interArrivalTimeInMinutes;
     private float interArrivalTimeInSeconds;
@@ -18,6 +18,10 @@ public class Arrival : MonoBehaviour
 
     public float minInterArrivalTimeInSeconds = 3; 
     public float maxInterArrivalTimeInSeconds = 60;
+    public float timeScale = 1;
+
+    public Slider sliderTScale;
+    
 
     public enum ArrivalIntervalTimeStrategy
     {
@@ -49,7 +53,12 @@ public class Arrival : MonoBehaviour
         txtDebug.text = "\nproc#:" + System.Environment.ProcessorCount;
 #endif
     }
-   
+
+    private void Update()
+    {
+        timeScale = sliderTScale.value;
+    }
+
     IEnumerator GenerateArrivals()
     {
         while (generateArrivals)
@@ -79,7 +88,7 @@ public class Arrival : MonoBehaviour
 
             }
 
-            yield return new WaitForSeconds(timeToNextArrivalInSec);
+            yield return new WaitForSeconds(timeToNextArrivalInSec / timeScale);
 
         }
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 //New as of Feb.25rd
 
 public class Service : MonoBehaviour
@@ -20,6 +21,13 @@ public class Service : MonoBehaviour
 
     Queue queueManager;
 
+    public Text Timer;
+    public float elapsedSeconds = 0f;
+
+    public float timeScale = 1;
+
+    public Slider sliderTScale;
+
     public enum ServiceIntervalTimeStrategy
     {
         ConstantIntervalTime,
@@ -36,6 +44,17 @@ public class Service : MonoBehaviour
         interServiceTimeInHours = 1.0f / serviceRateAsCustomersPerHour;
         interServiceTimeInMinutes = interServiceTimeInHours * 60;
         interServiceTimeInSeconds = interServiceTimeInMinutes * 60;
+    }
+
+    private void Update()
+    {
+        timeScale = sliderTScale.value;
+    }
+
+    private void FixedUpdate()
+    {
+        elapsedSeconds += Time.deltaTime;
+        Timer.text = "Total time in seconds: " + elapsedSeconds.ToString();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -80,7 +99,7 @@ public class Service : MonoBehaviour
             }
 
             generateServices = false;
-            yield return new WaitForSeconds(timeToNextServiceInSec);
+            yield return new WaitForSeconds(timeToNextServiceInSec / timeScale);
         }
         customerInService.GetComponent<CustomerController>().ExitService(customerExitPlace);
         customerInService = null;

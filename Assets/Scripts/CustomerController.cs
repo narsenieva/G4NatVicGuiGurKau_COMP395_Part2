@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 
 public class CustomerController : MonoBehaviour
@@ -14,6 +15,8 @@ public class CustomerController : MonoBehaviour
     public bool InService { get; set; }
     public GameObject atmWindow;
     public Queue queueManager;
+    public Text Timer;
+    public float elapsedSeconds = 0f;
 
     public enum CustomerState
     {
@@ -92,7 +95,8 @@ public class CustomerController : MonoBehaviour
 
     public void FixedUpdate()
     {
-
+        elapsedSeconds += Time.deltaTime;
+        Timer.text = elapsedSeconds.ToString();
 
     }
     public void SetInService(bool value)
