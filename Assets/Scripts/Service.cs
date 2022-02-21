@@ -10,12 +10,12 @@ public class Service : MonoBehaviour
     public Transform customerExitPlace;
 
     public float serviceRateAsCustomersPerHour = 20; // customer/hour
-    public float interServiceTimeInHours; // = 1.0 / ServiceRateAsCarsPerHour;
+    public float interServiceTimeInHours; // = 1.0 / Service time of customer Per Hour;
     private float interServiceTimeInMinutes;
     private float interServiceTimeInSeconds;
 
     public bool generateServices = false;
-
+    // minimum and maximum interservice time in seconds
     public float minInterServiceTimeInSeconds = 3;
     public float maxInterServiceTimeInSeconds = 60;
 

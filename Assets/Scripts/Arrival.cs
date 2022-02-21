@@ -13,12 +13,12 @@ public class Arrival : MonoBehaviour
     public float arrivalRateAsCustomersPerHour = 200; // customer/hour
 
 
-    public float interArrivalTimeInHours; // = 1.0 / arrivalRateAsCarsPerHour;
+    public float interArrivalTimeInHours; // = 1.0 / arrival rate of customeer per hour;
     private float interArrivalTimeInMinutes;
     private float interArrivalTimeInSeconds;
 
     public bool generateArrivals = true;
-
+    // simple minimum and maximum InterArrivalTime in seconds
     public float minInterArrivalTimeInSeconds = 3; 
     public float maxInterArrivalTimeInSeconds = 60;
     public float timeScale = 1;
@@ -38,7 +38,7 @@ public class Arrival : MonoBehaviour
 
     Queue queueManager;
 
-
+    //UI debugging
 #if DEBUG_AP
     public Text txtDebug;
 #endif

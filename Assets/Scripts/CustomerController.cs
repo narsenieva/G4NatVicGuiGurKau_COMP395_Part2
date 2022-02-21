@@ -21,7 +21,7 @@ public class CustomerController : MonoBehaviour
     public enum CustomerState
     {
         None=-1,
-        Entered,
+        Entered, // customer going to ATM
         InService,
         Serviced
     }

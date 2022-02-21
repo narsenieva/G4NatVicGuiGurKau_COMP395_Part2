@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Queue : MonoBehaviour
 {
-    //Queue<GameObject> queue = new Queue<GameObject>();
     List<GameObject> queue = new List<GameObject>();
     LinkedList<GameObject> q = new LinkedList<GameObject>();
     
