@@ -12,12 +12,14 @@ public class TimeScale : MonoBehaviour
     void Start()
     {
         txtTScale.text = "Time Scale: X" + tScale;
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
         tScale = sliderTScale.value;
+        Time.timeScale = tScale;
         txtTScale.text = "Time Scale: X" + tScale;
     }
 
